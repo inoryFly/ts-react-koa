@@ -28,3 +28,9 @@ clientDevConfig.module.rules.push(
 // clientDevConfig.optimization={
 
 // }
+const clientProConfig:webpack.Configuration=cloneDeep(clientBaseConfig)
+
+export default {
+    development:clientDevConfig,
+    production:clientProConfig
+}

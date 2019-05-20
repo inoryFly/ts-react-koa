@@ -1,0 +1,10 @@
+5/18
+
+    renderToNodeStream能否与ejs模板配合？
+    webpack编译时resolve.extensions里面必须包含jsx,但是如果配置文件跟tsconfig.json同级则不需要
+
+5/20
+
+    webpack的koa-webpack-middleware没有公共的声明文件，所以我参考了网上的写法。
+
+    使用hydrate注水出现警告：Did not expect server HTML to contain the text node "         " in <div>,原因似乎是热更新的问题

@@ -1,11 +1,11 @@
 import * as path from 'path'
 import * as webpack from 'webpack'
 
-export const getTsRule=configFileName=>({
+export const getTsRule=(configFileName:string)=>({
     test:/\.tsx?$/,
     use:[
         {
-            loader:'ts-loader',
+            loader:'awesome-typescript-loader',
             options:{
                 configFileName
             }

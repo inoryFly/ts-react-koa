@@ -1,3 +1,4 @@
 export default {
-    port:"3344"
+    port:"3344",
+    isDev:true
 }
