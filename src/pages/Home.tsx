@@ -4,21 +4,16 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {toggleTodo} from '../store/action'
 
-function mapStateToProps(state:any){
-    return {
-        todos:[{name:"inory",age:12},{name:"fly",age:20 }]
-    }
+interface Person{
+    name:string;
+    age:number;
 }
 
-function mapDispatchToProps(dispatch:any){
-    return bindActionCreators(toggleTodo,dispatch)
+interface HomeProps{
+    todos:Array<Person>
 }
 
-interface Props{
-    todos:Array<any>
-}
-
-class Home extends React.Component<Props,object>{
+class Home extends React.Component<HomeProps,object>{
     render(){
         const {todos}=this.props
         return <span>
@@ -29,5 +24,13 @@ class Home extends React.Component<Props,object>{
         </span>
     }
 }
+function mapStateToProps(state:any){
+    return {
+        todos:[{name:"inory",age:12},{name:"fly",age:20 }]
+    }
+}
 
+function mapDispatchToProps(dispatch:any){
+    return bindActionCreators(toggleTodo,dispatch)
+}
 export default connect(mapStateToProps,mapDispatchToProps)(Home)
