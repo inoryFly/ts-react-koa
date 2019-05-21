@@ -8,10 +8,9 @@ import TodoList from './pages/TodoList'
 class Routes extends React.Component {
     render() {
         return <Switch>
-                    <Route exact path="/" component={Home} />
+                    <Route exact path="/a/b" component={Home} />
                     <Route exact path="/:list" component={TodoList} />
                 </Switch>
-       
     }
 }
 

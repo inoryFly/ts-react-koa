@@ -1,19 +1,22 @@
 import * as React from 'react'
-import {renderToString} from 'react-dom/server'
+import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import Routes from '../../src/routes'
-import store from '../../src/store'
+import configureStore from '../../src/store'
+import TodoList from '../../src/pages/TodoList'
 
+const store = configureStore()
 export default {
-    render(ctx,context){
-        console.log(ctx.url)
-        return renderToString(<Provider store={store}>
-            <StaticRouter location={ctx.url} context={context}>
-                <Routes />
+    render(ctx, context) {
+        return renderToString(<div><StaticRouter location={ctx.url} context={context}>
+                <Provider store={store}>
+                    <Routes />
+                </Provider>
             </StaticRouter>
-        </Provider>)
+            </div>
+        )
     },
-    initState:store.getState()
+    initState: store.getState()
 }

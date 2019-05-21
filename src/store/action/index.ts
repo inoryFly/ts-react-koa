@@ -27,3 +27,16 @@ export const toggleTodo=id=>{
         }
     }
 }
+
+export const getUser=()=>{
+    return {
+        type:"GET_USER"
+    }
+}
+
+export const getUserSuccess=(user)=>{
+    return {
+        type:"GET_USER_SUCCESS",
+        payload:user
+    }
+}
