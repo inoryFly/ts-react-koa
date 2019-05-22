@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
-    "dev": "webpack --config build/webpack.base.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -25,15 +24,20 @@
     "@types/redux-saga": "^0.10.5",
     "@types/webpack": "^4.4.31",
     "@types/webpack-dev-middleware": "^2.0.2",
+    "@types/webpack-merge": "^4.1.5",
     "@types/webpack-node-externals": "^1.6.3",
     "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^2.1.1",
     "ejs": "^2.6.1",
     "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "nodemon": "^1.19.0",
     "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
     "typescript": "^3.4.5",
     "webpack": "^4.31.0",
-    "webpack-cli": "^3.3.2"
+    "webpack-cli": "^3.3.2",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "koa": "^2.7.0",

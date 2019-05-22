@@ -10,12 +10,10 @@ import TodoList from '../../src/pages/TodoList'
 const store = configureStore()
 export default {
     render(ctx, context) {
-        return renderToString(<div><StaticRouter location={ctx.url} context={context}>
-                <Provider store={store}>
-                    <Routes />
-                </Provider>
-            </StaticRouter>
-            </div>
+        return renderToString(<div><Provider store={store}><StaticRouter location={ctx.url} context={context}>
+            <Routes />
+        </StaticRouter>
+        </Provider></div>
         )
     },
     initState: store.getState()

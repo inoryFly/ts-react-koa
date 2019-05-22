@@ -1,36 +1,41 @@
 import * as path from 'path'
 import * as webpack from 'webpack'
-import {cloneDeep} from 'lodash'
-
+import * as merge from 'webpack-merge'
 import baseConfig,{getTsRule} from './common'
 
-const clientBaseConfig:webpack.Configuration=cloneDeep(baseConfig)
 
-clientBaseConfig.entry={
-    client:[
-        path.resolve(__dirname,"../src/app.tsx")
-    ],
-    vendor:[
-        'react',
-        'react-dom'
-    ]
+const clientDevConfig:webpack.Configuration={
+    mode:"development",
+    entry:{
+        client:[
+            path.resolve(__dirname,"../src/app.tsx")
+        ],
+        vendor:[
+            'react',
+            'react-dom',
+            'redux',
+            'react-redux',
+            'react-router-dom'
+        ]
+    },
+    cache:false,
+    output:{
+        filename:'[name].js'
+    },
+    module:{
+        rules:[
+            getTsRule(path.resolve(__dirname,"../tsconfig.client.json"))
+        ]
+    }
 }
 
-const clientDevConfig:webpack.Configuration=cloneDeep(clientBaseConfig)
 
-clientDevConfig.mode="development"
-clientDevConfig.cache=false //禁用缓存
-clientDevConfig.output.filename='[name].js' //直接使用源文件名作为打包后文件名
-clientDevConfig.module.rules.push(
-    getTsRule(path.resolve(__dirname,"../tsconfig.client.json"))
-)
 // clientDevConfig.plugins.
 // clientDevConfig.optimization={
 
 // }
-const clientProConfig:webpack.Configuration=cloneDeep(clientBaseConfig)
+
 
 export default {
-    development:clientDevConfig,
-    production:clientProConfig
+    development:merge(baseConfig,clientDevConfig),
 }

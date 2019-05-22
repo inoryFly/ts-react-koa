@@ -15,7 +15,20 @@ export const getTsRule=(configFileName:string)=>({
 
 const baseConfig:webpack.Configuration={
     module:{
-        rules:[]
+        rules:[{
+            test:/\.less$/,
+            use:[
+                {loader:"style-loader"},{
+                    loader:"css-loader"
+                },{
+                    loader:"less-loader",
+                    options:{
+                        sourceMap:true,
+                        javascriptEnabled:true
+                    }
+                }
+            ]
+        }]
     },
     output:{
         path:path.resolve(__dirname,"../bundle"),

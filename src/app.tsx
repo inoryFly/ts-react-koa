@@ -18,11 +18,13 @@ declare global {
  */
 const store = configureStore(window.__REDUX_STATE__)
 ReactDOM.render(
-    <BrowserRouter>
     <div>
-        <Provider store={store}><Routes /></Provider>
-        </div>
+    <Provider store={store}>
+    <BrowserRouter basename="/">
+            <Routes />
     </BrowserRouter>
+    </Provider>
+    </div>
     ,
     document.getElementById("root")
 )

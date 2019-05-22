@@ -8,3 +8,11 @@
     webpack的koa-webpack-middleware没有公共的声明文件，所以我参考了网上的写法。
 
     使用hydrate注水出现警告：Did not expect server HTML to contain the text node "         " in <div>,原因似乎是热更新的问题
+
+5/22
+
+    为什么客户端还会运行一遍的原因是因为没有绑定点击事件等，所以需要浏览器运行一遍激活。而远离就是outpath中path设置public目录，然后将public设置为
+    koa静态资源目录。
+
+    这样的话就又有问题了：
+        首屏会重新渲染，就有声明周期了，会重新进行一些请求。

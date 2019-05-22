@@ -1,5 +1,5 @@
 {
-    "watch":["serverice","src","build"],
+    "watch":["server","src","build"],
     "ext":"ts",
-    "exec":"ts-node serverice/app.ts"
+    "exec":"ts-node server/app.ts"
 }

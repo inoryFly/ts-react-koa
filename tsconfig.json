@@ -7,5 +7,10 @@
         "module": "commonjs",
         "lib": ["es6","dom"],
         "experimentalDecorators": true
-    }
+    },
+    "include": [
+        "./@types/**/*",
+        "./src/**/*",
+        "./serverice/controller/bundle.tsx"
+    ]
 }

@@ -5,6 +5,7 @@
         "experimentalDecorators": true
     },
     "include": [
+        "./@types/**/*",
         "./src/**/*"
     ]
 }
