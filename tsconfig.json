@@ -6,11 +6,7 @@
         "jsx": "react",
         "module": "commonjs",
         "lib": ["es6","dom"],
-        "experimentalDecorators": true
-    },
-    "include": [
-        "./@types/**/*",
-        "./src/**/*",
-        "./serverice/controller/bundle.tsx"
-    ]
+        "experimentalDecorators": true,
+        "downlevelIteration": true,
+    }
 }

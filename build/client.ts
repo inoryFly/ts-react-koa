@@ -1,7 +1,7 @@
 import * as path from 'path'
 import * as webpack from 'webpack'
 import * as merge from 'webpack-merge'
-import baseConfig,{getTsRule} from './common'
+import baseConfig,{getTsRule,LessRule} from './common'
 
 
 const clientDevConfig:webpack.Configuration={
@@ -24,7 +24,8 @@ const clientDevConfig:webpack.Configuration={
     },
     module:{
         rules:[
-            getTsRule(path.resolve(__dirname,"../tsconfig.client.json"))
+            getTsRule(path.resolve(__dirname,"../tsconfig.client.json")),
+            LessRule({loader:"style-loader"})
         ]
     }
 }

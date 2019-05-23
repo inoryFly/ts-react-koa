@@ -2,7 +2,7 @@ import * as path from 'path'
 import * as webpack from 'webpack'
 import * as nodeExternals from 'webpack-node-externals'
 import * as merge from 'webpack-merge'
-import baseConfig,{getTsRule} from './common'
+import baseConfig,{getTsRule,LessRule} from './common'
 
 const serverBaseConfig:webpack.Configuration={
     entry:{
@@ -17,7 +17,8 @@ const serverBaseConfig:webpack.Configuration={
     },
     module:{
         rules:[
-            getTsRule(path.resolve(__dirname,"../tsconfig.server.json"))
+            getTsRule(path.resolve(__dirname,"../tsconfig.server.json")),
+            LessRule({loader:"isomorphic-style-loader"})
         ]
     },
     //忽略node_modules里的库，避免打包打输出文件

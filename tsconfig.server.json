@@ -4,8 +4,8 @@
         "jsx": "react",
     },
     "include": [
-        "./@types/**/*",
+        "./types/**/*",
         "./src/**/*",
-        "./serverice/controller/bundle.tsx"
+        "./server/controller/bundle.tsx"
     ]
 }

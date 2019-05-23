@@ -29,6 +29,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^2.1.1",
     "ejs": "^2.6.1",
+    "isomorphic-style-loader": "^5.0.1",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "nodemon": "^1.19.0",

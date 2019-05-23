@@ -5,16 +5,23 @@ import { Provider } from 'react-redux'
 
 import Routes from '../../src/routes'
 import configureStore from '../../src/store'
-import TodoList from '../../src/pages/TodoList'
+
+
 
 const store = configureStore()
 export default {
     render(ctx, context) {
-        return renderToString(<div><Provider store={store}><StaticRouter location={ctx.url} context={context}>
-            <Routes />
-        </StaticRouter>
-        </Provider></div>
-        )
+        const css = new Set()
+        const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()))
+        return {
+            body:renderToString(<div>
+                <Provider store={store}><StaticRouter location={ctx.url} context={context}>
+                    <Routes />
+                </StaticRouter>
+                </Provider>
+           </div>),
+            css
+        }
     },
     initState: store.getState()
 }

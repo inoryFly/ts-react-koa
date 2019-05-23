@@ -2,8 +2,8 @@ import * as React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {addTodo,getUser} from '../store/action'
-// import * as styles from './index.less'
-
+import * as styles from './index.less'
+console.log(styles)
 
 interface Person{
     text:string
@@ -74,7 +74,7 @@ class Home extends React.Component<HomeProps,HomeState>{
             <div onClick={this.changeTodos}>点我修改props</div>
             <div>{status?"true":"false"}</div>
             用户信息：
-            <div>姓名：{user.username}</div>
+            <div className={styles.test}>姓名：{user.username}</div>
             <div>编号：{user.userid}</div>
             <div>性别：{user.sex}</div>
             <div onClick={this.getUser}>点我获取用户</div>
