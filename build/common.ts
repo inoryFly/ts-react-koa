@@ -22,6 +22,7 @@ export const LessRule = (styleLoader) => {
                 options: {
                     modules: true,
                     camelCase: true,
+                    importLoaders:1
                 }
             }, {
                 loader: "less-loader"

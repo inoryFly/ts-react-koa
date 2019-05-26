@@ -6,8 +6,6 @@ import koaWebpackDevMiddleWare from './koa-webpack-dev-middleware'
 
 
 export default (app:Koa,serverComplieDone:()=>void)=>{
-    console.log(webpackClientConfig.development.module.rules)
-    // 
     const client=webpack(webpackClientConfig.development)
     client.hooks.done.tap('Mytest',params=>{
         const server=webpack(webpackServerConfig.development)

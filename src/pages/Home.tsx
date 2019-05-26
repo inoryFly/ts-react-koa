@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {addTodo,getUser} from '../store/action'
 import * as styles from './index.less'
-console.log(styles)
 
 interface Person{
     text:string
@@ -25,10 +24,6 @@ interface HomeState{
     todos:Array<Person>;
     status:boolean;
 }
-// @connect(({todos,user})=>({
-//     todos,
-//     user
-// }))
 class Home extends React.Component<HomeProps,HomeState>{
     
     componentDidMount(){
