@@ -11,17 +11,12 @@ import configureStore from '../../src/store'
 const store = configureStore()
 export default {
     render(ctx, context) {
-        const css = new Set()
-        const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()))
-        return {
-            body:renderToString(<div>
+        return renderToString(<div>
                 <Provider store={store}><StaticRouter location={ctx.url} context={context}>
                     <Routes />
                 </StaticRouter>
                 </Provider>
-           </div>),
-            css
-        }
+           </div>)
     },
     initState: store.getState()
 }

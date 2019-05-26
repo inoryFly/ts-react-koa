@@ -1,3 +1,9 @@
+import * as csshook from 'css-modules-require-hook'
+csshook({
+    extensions:['.less'],
+    camelCase: true,
+    generateScopedName:'[name]__[local]__[hash:base64:5]'
+})
 import * as Koa from 'koa'
 import * as path from 'path'
 import baseConfig from './config'

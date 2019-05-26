@@ -32,7 +32,6 @@ interface HomeState{
 class Home extends React.Component<HomeProps,HomeState>{
     
     componentDidMount(){
-        console.log(this.props)
         const {dispatch}=this.props
         dispatch(getUser())
     }
