@@ -1,8 +1,14 @@
 import * as csshook from 'css-modules-require-hook'
+import * as imghook from 'asset-require-hook'
 csshook({
     extensions:['.less'],
     camelCase: true,
-    generateScopedName:'[name]__[local]__[hash:base64:5]'
+    generateScopedName:'[name]__[local]__[hash:base64:8]'
+})
+imghook({
+    extensions: ['jpg', 'png', 'gif', 'webp'],
+    name:'/assets/static/[hash].[ext]',
+    limit: 8000
 })
 import * as Koa from 'koa'
 import * as path from 'path'

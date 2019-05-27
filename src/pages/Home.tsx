@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {addTodo,getUser} from '../store/action'
 import * as styles from './index.less'
+import * as testImg from '../asset/timg.jpg'
 
 interface Person{
     text:string
@@ -62,6 +63,7 @@ class Home extends React.Component<HomeProps,HomeState>{
         const {status}=this.state
         return <div>
             <Link to="/tse">点我跳转</Link>
+            <img src={testImg} />
             {
                 todos.map(ele=><div key={ele.id}>我是{ele.text},今年{ele.id}岁了</div>)
             }
@@ -70,7 +72,7 @@ class Home extends React.Component<HomeProps,HomeState>{
             用户信息：
             <div className={styles.test}>姓名：{user.username}</div>
             <div>编号：{user.userid}</div>
-            <div>性别：{user.sex}</div>
+            <div>性别(男|女)：{user.sex}</div>
             <div onClick={this.getUser}>点我获取用户</div>
         </div>
     }

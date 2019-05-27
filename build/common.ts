@@ -20,9 +20,8 @@ export const LessRule = (styleLoader) => {
             styleLoader, {
                 loader: "css-loader",
                 options: {
+                    importLoaders: 1,
                     modules: true,
-                    camelCase: true,
-                    importLoaders:1
                 }
             }, {
                 loader: "less-loader"
@@ -32,7 +31,13 @@ export const LessRule = (styleLoader) => {
 }
 const baseConfig: webpack.Configuration = {
     module: {
-        rules: []
+        rules: [{
+            test:/\.(png|jpe?g|gif)$/,loader:"url-loader",
+            options:{
+                limit:8000,
+                name:"static/[hash].[ext]"
+            }
+        }]
     },
     output: {
         path: path.resolve(__dirname, "../bundle"),
@@ -44,6 +49,3 @@ const baseConfig: webpack.Configuration = {
     }
 }
 export default baseConfig
-// export default  baseConfig:webpack.Configure={
-
-// }
