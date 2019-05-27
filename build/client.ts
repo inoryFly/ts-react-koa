@@ -25,7 +25,7 @@ const clientDevConfig:webpack.Configuration={
     module:{
         rules:[
             getTsRule(path.resolve(__dirname,"../tsconfig.client.json")),
-            LessRule({loader:"style-loader"})
+            LessRule()
         ]
     }
 }

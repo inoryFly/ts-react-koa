@@ -70,7 +70,7 @@ class Home extends React.Component<HomeProps,HomeState>{
             <div onClick={this.changeTodos}>点我修改props</div>
             <div>{status?"true":"false"}</div>
             用户信息：
-            <div className={styles.test}>姓名：{user.username}</div>
+            <div className={styles.root}>姓名：{user.username}</div>
             <div>编号：{user.userid}</div>
             <div>性别(男|女)：{user.sex}</div>
             <div onClick={this.getUser}>点我获取用户</div>

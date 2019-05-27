@@ -1,18 +1,7 @@
-import * as csshook from 'css-modules-require-hook'
-import * as imghook from 'asset-require-hook'
-csshook({
-    extensions:['.less'],
-    camelCase: true,
-    generateScopedName:'[name]__[local]__[hash:base64:8]'
-})
-imghook({
-    extensions: ['jpg', 'png', 'gif', 'webp'],
-    name:'/assets/static/[hash].[ext]',
-    limit: 8000
-})
+import baseConfig from './config' //引入钩子等配置
 import * as Koa from 'koa'
 import * as path from 'path'
-import baseConfig from './config'
+
 import middleWareRegister from './middlewareRegister'
 import webpackDevServer from '../build/webpack-dev-server'
 

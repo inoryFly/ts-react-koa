@@ -18,7 +18,7 @@ const serverBaseConfig:webpack.Configuration={
     module:{
         rules:[
             getTsRule(path.resolve(__dirname,"../tsconfig.server.json")),
-            LessRule({loader:"isomorphic-style-loader"})
+            LessRule()
         ]
     },
     //忽略node_modules里的库，避免打包打输出文件
