@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {addTodo,getUser} from '../store/action'
 import * as styles from './index.less'
 import * as testImg from '../asset/timg.jpg'
+// import {noRequest } from '../utils/utils'
 
 interface Person{
     text:string
@@ -26,10 +27,15 @@ interface HomeState{
     status:boolean;
 }
 class Home extends React.Component<HomeProps,HomeState>{
-    
+   
+    static fetchs(store){
+        console.log("执行了嘛")
+        return store.dispatch(getUser())
+    }
+
     componentDidMount(){
-        const {dispatch}=this.props
-        dispatch(getUser())
+        // const {dispatch}=this.props
+        // dispatch(getUser())
     }
     state={
         todos:[{id:0,text:"gg",completed:false}],
