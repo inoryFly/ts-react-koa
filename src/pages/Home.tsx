@@ -29,7 +29,6 @@ interface HomeState{
 class Home extends React.Component<HomeProps,HomeState>{
    
     static fetchs(store){
-        console.log("执行了嘛")
         return store.dispatch(getUser())
     }
 

@@ -7,7 +7,7 @@ import configureStore from '../../src/store'
 
 
 interface SelfType {
-    fetchs: (store: any) => any |Array<Function>
+    fetchs: (store: any) => any 
 }
 
 type SsrType<T> = T & SelfType

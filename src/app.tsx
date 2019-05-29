@@ -16,7 +16,7 @@ declare global {
  * 为了能尽可能复用ssr的html内容，所以需要使用新的hydrate方法进行事件绑定等客户端独有的操作
  */
 const store = configureStore(window.__REDUX_STATE__)
-ReactDOM.render(
+ReactDOM.hydrate(
     <div>
         <Provider store={store}>
             <BrowserRouter basename="/">
