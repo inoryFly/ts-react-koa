@@ -6,7 +6,7 @@ const router=[
         path:'/a/b',component:Home,exact:true
     },
     {
-        path:'/:list',component:TodoList,exact:true
+        path:'/tse',component:TodoList,exact:true
     }
 ]
 export default router

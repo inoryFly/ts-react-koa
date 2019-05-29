@@ -33,8 +33,11 @@ class Home extends React.Component<HomeProps,HomeState>{
     }
 
     componentDidMount(){
-        // const {dispatch}=this.props
-        // dispatch(getUser())
+        if(window.__SSR__){
+            window.__SSR__=false
+        }else{
+            Home.fetchs(this.props)
+        }
     }
     state={
         todos:[{id:0,text:"gg",completed:false}],
@@ -66,7 +69,6 @@ class Home extends React.Component<HomeProps,HomeState>{
     render(){
         const {todos,user}=this.props
         const {status}=this.state
-        console.log(user)
         return <div>
             <Link to="/tse">点我跳转</Link>
             <img src={testImg} />

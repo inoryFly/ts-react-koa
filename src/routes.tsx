@@ -10,7 +10,7 @@ class Routes extends React.Component {
     render() {
         return <Switch>
             {
-                router.map(ele => <Route key={ele.path} exact={ele.exact} component={ele.component} />)
+                router.map(ele => <Route key={ele.path} path={ele.path} exact={ele.exact} component={ele.component} />)
             }
         </Switch>
     }

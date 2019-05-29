@@ -12,6 +12,7 @@
     <script>
         try{
             window.__REDUX_STATE__= <%- JSON.stringify(initState) %>
+            window.__SSR__ = <%- ssr %>
         }catch(e){
             console.warn("error in getting server redux data")
         }

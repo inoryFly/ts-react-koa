@@ -8,6 +8,7 @@ import configureStore from './store'
 declare global {
     interface Window {
         __REDUX_STATE__: any
+        __SSR__:boolean
     }
 }
 // const store =createStore( todoApp,window.__REDUX_STATE__)
