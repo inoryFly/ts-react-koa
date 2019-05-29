@@ -1,3 +1,4 @@
+import * as Koa from 'koa'
 import { ComponentType } from 'react'
 import { matchRoutes } from 'react-router-config'
 import bundle from './bundle'
@@ -5,19 +6,18 @@ import router from '../../src/config/routes.config'
 import configureStore from '../../src/store'
 
 
-
 interface SelfType {
     fetchs: (store: any) => any | null
 }
 
-type SsrType<T> = T & SelfType
+type SsrType<T = ComponentType> = T & SelfType
 
-export default async (ctx, next) => {
+export default async (ctx:Koa.Context, next:()=>Promise<any>) => {
     let store = configureStore()
-    let content = {}
+    let content = <any>{}
     const branch = matchRoutes(router, ctx.url)
     const promises = branch.map(({ route }) => {
-        const fetchs = (route.component as SsrType<ComponentType>).fetchs
+        const fetchs = (route.component as SsrType).fetchs
         //不是所有的组件都有fetchs的
         return fetchs instanceof Function ?fetchs(store):Promise.resolve(null)
     })
