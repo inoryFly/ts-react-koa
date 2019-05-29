@@ -29,4 +29,6 @@
 5/28
 
     后台无法使用fetch?该用了axios,后面看看别人说的node-fetch怎么样。
-    promosie只能监听到第一层action,无法监听到saga的执行，所以我换成了redux-thunk
+    promosie只能监听到第一层action,无法监听到saga的执行，所以我换成了redux-thunk。
+
+    现在是下午，感觉还是换成我们项目用的dva比较好，所以我单开了个分支。
