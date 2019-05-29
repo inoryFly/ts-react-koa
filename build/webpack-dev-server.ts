@@ -15,15 +15,7 @@ export default (app:Koa,serverComplieDone:()=>void)=>{
             callback()
         })
     })
-    // client.plugin('done',()=>{
-    //     const server=webpack(webpackServerConfig.development)
-    //     server.plugin("done",serverComplieDone)
-    //     server.run((err,stats)=>{
-    //         if(err){
-    //             console.error(stats)
-    //         }
-    //     })
-    // })
+
     
     const {output}=webpackClientConfig.development
     const devMiddlewareOptions={

@@ -67,6 +67,7 @@ class Home extends React.Component<HomeProps,HomeState>{
     render(){
         const {todos,user}=this.props
         const {status}=this.state
+        console.log(user)
         return <div>
             <Link to="/tse">点我跳转</Link>
             <img src={testImg} />
